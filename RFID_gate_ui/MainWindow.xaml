@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="100" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="_Fichier" >
+                <MenuItem Header="_Ouvrir..." Click="NotYetImplemented_click" />
+                <MenuItem Header="_Enregistrer" Click="NotYetImplemented_click"/>
+                <MenuItem Header="_Enregistrer sous..." Click="NotYetImplemented_click"/>
+                <Separator />
+                <MenuItem Header="_Quitter" Click="Quit_click"/>
+            </MenuItem>
+            <MenuItem Header="_Navigation" >
+                <MenuItem Header="_Employés" />
+                <MenuItem Header="_Locaux"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

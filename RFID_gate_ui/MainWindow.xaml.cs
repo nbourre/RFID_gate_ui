@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace RFID_gate_ui
 {
@@ -24,5 +11,16 @@ namespace RFID_gate_ui
         {
             InitializeComponent();
         }
+
+        private void NotYetImplemented_click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Cette fonctionnalité n'a pas été encore implémentée.");
+        }
+
+        private void Quit_click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
+
     }
 }
