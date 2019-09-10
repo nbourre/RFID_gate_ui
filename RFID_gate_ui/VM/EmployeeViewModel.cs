@@ -35,7 +35,8 @@ namespace RFID_gate_ui.VM
 
             Employees.Add(new Employee { FirstName = "Nick", LastName = "Bourré" });
             Employees.Add(new Employee { FirstName = "Lyne", LastName = "Amyot" });
-
         }
+
+
     }
 }

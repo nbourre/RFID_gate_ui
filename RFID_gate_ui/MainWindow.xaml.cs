@@ -1,4 +1,5 @@
 ﻿using RFID_gate_models;
+using RFID_gate_ui.Views;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -9,51 +10,24 @@ namespace RFID_gate_ui
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : Window
     {
-        public ObservableCollection<Employee> Employees { get; set; }
-        private Employee _selectedEmployee;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public Employee SelectedEmployee
-        {
-            get
-            {
-                return _selectedEmployee;
-            }
-            set
-            {
-                _selectedEmployee = value;
-                OnPropertyChanged();
-            }
-        }
+        MainViewModel _mainViewModel;
+        EmployeeView _employeeView;
+        RoomView _roomView;
 
         public MainWindow()
         {
-            Employees = new ObservableCollection<Employee>();
-
             InitializeComponent();
-            this.DataContext = this;
 
-            Loaded += MainWindow_Loaded;
-        }
+            _employeeView = new EmployeeView();
+            _roomView = new RoomView();
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            Load();
-        }
+            _mainViewModel = new MainViewModel(_employeeView);
 
-        public void Load()
-        {
-            Employees.Clear();
-
-            Employees.Add(new Employee { FirstName = "Nick", LastName = "Bourré" });
-            Employees.Add(new Employee { FirstName = "Lyne", LastName = "Amyot" });
+            this.DataContext = _mainViewModel;
 
         }
-
-
 
         private void NotYetImplemented_click(object sender, RoutedEventArgs e)
         {
@@ -65,10 +39,14 @@ namespace RFID_gate_ui
             App.Current.Shutdown();
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
+        private void EmployeeMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            _mainViewModel.ContentWindow = _employeeView;
         }
 
+        private void RoomMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            _mainViewModel.ContentWindow = _roomView;
+        }
     }
 }

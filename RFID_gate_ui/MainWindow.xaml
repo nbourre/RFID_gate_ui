@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RFID_gate_ui"
+        xmlns:views="clr-namespace:RFID_gate_ui.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
@@ -16,57 +17,11 @@
                 <MenuItem Header="_Quitter" Click="Quit_click"/>
             </MenuItem>
             <MenuItem Header="_Navigation" >
-                <MenuItem Header="_Employés" />
-                <MenuItem Header="_Locaux"/>
+                <MenuItem Header="_Employés" Click="EmployeeMenuItem_Click"/>
+                <MenuItem Header="_Locaux" Click="RoomMenuItem_Click"/>
             </MenuItem>
         </Menu>
-        
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="30"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" MinWidth="100" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            
-            <ListView Grid.Row="1" ItemsSource="{Binding Employees}"
-                  SelectedItem="{Binding SelectedEmployee, Mode=TwoWay}"
-                  DisplayMemberPath="FullName"
-                  Grid.RowSpan="2"/>
-            <Grid Grid.Column="1" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Label Content="Prénom" Margin="10 10 10 10" />
-                <TextBox Grid.Row="1" Text="{Binding SelectedEmployee.FirstName, 
-                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10" />
-
-                <Label Grid.Row="2" Content="Nom" Margin="10 0" />
-                <TextBox Grid.Row="3" Text="{Binding SelectedEmployee.LastName, 
-                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10" />
-
-                <Label Grid.Row="4" Content="Courriel" Margin="10 0" />
-                <TextBox Grid.Row="5" Text="{Binding SelectedEmployee.Email, 
-                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10" />
-
-                <Label Grid.Row="6" Content="Numéro de carte" Margin="10 0" />
-                <TextBox Grid.Row="7" Text="{Binding SelectedEmployee.CardId, 
-                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10" />
-            </Grid>
-
-        </Grid>
+        <ContentControl Content="{Binding ContentWindow}" />
     </StackPanel>
  
 </Window>

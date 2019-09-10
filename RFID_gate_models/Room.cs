@@ -2,7 +2,7 @@
 
 namespace RFID_gate_models
 {
-    class Room
+    public class Room
     {
         [Required]
         [StringLength(10)]

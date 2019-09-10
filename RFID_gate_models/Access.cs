@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RFID_gate_models
 {
-    class Access
+    public class Access
     {
         [Required]
         public Employee employee { get; set; }
 
         [Required]
-        public Room room { get; set; }
+        public Room Room { get; set; }
 
         public bool Always { get; set; } = true;
 
