@@ -17,5 +17,13 @@ namespace RFID_gate_models
         public string Email { get; set; }
 
         public string CardId { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return LastName + ", " + FirstName;
+            }
+        }
     }
 }
