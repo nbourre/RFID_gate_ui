@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\AccessDataService.cs" />
+    <Compile Include="Data\EmployeeDataService.cs" />
+    <Compile Include="Data\IDataService.cs" />
+    <Compile Include="Data\RoomDataService.cs" />
     <Compile Include="VM\MainViewModel.cs" />
     <Compile Include="Views\EmployeeView.xaml.cs">
       <DependentUpon>EmployeeView.xaml</DependentUpon>
@@ -118,9 +122,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\RFID_gate_models\RFID_gate_models.csproj">
       <Project>{678337E2-73DA-454B-8CBE-836687B1EC46}</Project>

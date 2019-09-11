@@ -13,7 +13,6 @@ namespace RFID_gate_ui
             ContentWindow = contentWindow;
         }
 
-
         public UserControl ContentWindow
         {
             get { return _contentWindow; }

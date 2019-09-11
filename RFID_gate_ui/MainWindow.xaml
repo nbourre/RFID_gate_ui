@@ -7,8 +7,8 @@
         xmlns:views="clr-namespace:RFID_gate_ui.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <Menu>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Fichier" >
                 <MenuItem Header="_Ouvrir..." Click="NotYetImplemented_click" />
                 <MenuItem Header="_Enregistrer" Click="NotYetImplemented_click"/>
@@ -21,7 +21,7 @@
                 <MenuItem Header="_Locaux" Click="RoomMenuItem_Click"/>
             </MenuItem>
         </Menu>
-        <ContentControl Content="{Binding ContentWindow}" />
-    </StackPanel>
+        <ContentControl DockPanel.Dock="Bottom" Content="{Binding ContentWindow}"/>
+    </DockPanel>
  
 </Window>
