@@ -37,14 +37,16 @@ namespace RFID_gate_ui.Data
                 int nbAccess = random.Next(2, 5);
                 for (int j = 0; j < nbAccess; j++)
                 {
+                    int roomIdx = random.Next(0, nbRooms);
+
                     Access temp = new Access
                     {
-                        Employee = _employees[i],
-                        Room = _rooms[random.Next(0, nbRooms)],
+                        CardId = _employees[i].CardId,
+                        RoomNumber = _rooms[roomIdx].Number,
                         Begin = DateTime.Now.AddHours(random.Next(-4, 0)),
                         End = DateTime.Now.AddHours(random.Next(0, 4))                        
                     };
-
+                    
                     Accesses.Add(temp);
                 }
             }

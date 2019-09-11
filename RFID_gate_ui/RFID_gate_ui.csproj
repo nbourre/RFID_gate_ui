@@ -58,6 +58,7 @@
     <Compile Include="Data\EmployeeDataService.cs" />
     <Compile Include="Data\IDataService.cs" />
     <Compile Include="Data\RoomDataService.cs" />
+    <Compile Include="Helpers\RandomFunctions.cs" />
     <Compile Include="VM\MainViewModel.cs" />
     <Compile Include="Views\EmployeeView.xaml.cs">
       <DependentUpon>EmployeeView.xaml</DependentUpon>

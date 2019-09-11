@@ -6,10 +6,10 @@ namespace RFID_gate_models
     public class Access
     {
         [Required]
-        public Employee Employee { get; set; }
+        public String CardId { get; set; }
 
         [Required]
-        public Room Room { get; set; }
+        public String RoomNumber { get; set; }
 
         public bool Always { get; set; } = true;
 
