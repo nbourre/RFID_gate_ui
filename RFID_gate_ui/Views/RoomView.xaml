@@ -7,6 +7,50 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="100" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Rooms}"
+                  SelectedItem="{Binding SelectedRoom, Mode=TwoWay}"
+                  DisplayMemberPath="FullDescription"
+                  Grid.RowSpan="2"
+                  Name="lvRooms"
+                  />
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Content="Number" Margin="10 10 10 10" />
+            <TextBox Grid.Row="1" Text="{Binding SelectedRoom.Number, 
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10" />
+
+            <Label Grid.Row="2" Content="Description" Margin="10 0" />
+            <TextBox Grid.Row="3" Text="{Binding SelectedRoom.Description, 
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10" />
+
             
+            <ListView Grid.Row="5"
+                      ItemsSource="{Binding ElementName=lvRooms, Path=SelectedItem.Number}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Employé" DisplayMemberBinding="{Binding CardId}" Width="70"/>
+                        <GridViewColumn Header="Début" DisplayMemberBinding="{Binding Begin}" Width="70"/>
+                        <GridViewColumn Header="Fin" DisplayMemberBinding="{Binding End}" Width="70"/>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+        </Grid>
     </Grid>
 </UserControl>

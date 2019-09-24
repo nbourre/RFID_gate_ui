@@ -8,7 +8,7 @@ namespace RFID_gate_ui.Data
 {
     class EmployeeDataService : IDataService<Employee>
     {
-        List<Employee> Employees = new List<Employee>()
+        static List<Employee> Employees = new List<Employee>()
         {
             new Employee { FirstName = "Nick", LastName = "Bourré", CardId = RandomFunctions.AlphanumericalString(5) },
             new Employee { FirstName = "Lyne", LastName = "Amyot", CardId = RandomFunctions.AlphanumericalString(5) },
@@ -21,7 +21,10 @@ namespace RFID_gate_ui.Data
 
         IEnumerable<Employee> IDataService<Employee>.GetAll()
         {
-            return Employees;
+            foreach (Employee e in Employees)
+            {
+                yield return e;
+            }
         }
 
 

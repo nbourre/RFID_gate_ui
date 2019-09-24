@@ -1,8 +1,4 @@
-﻿using RFID_gate_models;
-using RFID_gate_ui.Views;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using RFID_gate_ui.Views;
 using System.Windows;
 
 namespace RFID_gate_ui
@@ -22,10 +18,11 @@ namespace RFID_gate_ui
 
             _employeeView = new EmployeeView();
             _roomView = new RoomView();
+            
 
             _mainViewModel = new MainViewModel(_employeeView);
 
-            this.DataContext = _mainViewModel;
+            DataContext = _mainViewModel;
 
         }
 

@@ -10,5 +10,13 @@ namespace RFID_gate_models
 
         [StringLength(50)]
         public string Description { get; set; }
+
+        public string FullDescription
+        {
+            get
+            {
+                return Number + " : " + Description;
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace RFID_gate_ui.Views
         public EmployeeView()
         {
             InitializeComponent();
+
             this.DataContext = new EmployeeViewModel();
         }
     }

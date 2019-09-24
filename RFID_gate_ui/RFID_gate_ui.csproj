@@ -72,6 +72,7 @@
     <Compile Include="VM\BaseViewModel.cs" />
     <Compile Include="VM\EmployeeViewModel.cs" />
     <Compile Include="VM\MenuViewModel.cs" />
+    <Compile Include="VM\RoomViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

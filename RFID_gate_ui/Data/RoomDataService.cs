@@ -5,7 +5,7 @@ namespace RFID_gate_ui.Data
 {
     class RoomDataService : IDataService<Room>
     {
-        List<Room> Rooms = new List<Room>();
+        static List<Room> Rooms = new List<Room>();
 
         public IEnumerable<Room> GetAll()
         {

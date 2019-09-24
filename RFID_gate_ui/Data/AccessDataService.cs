@@ -7,7 +7,7 @@ namespace RFID_gate_ui.Data
 {
     class AccessDataService : IDataService<Access>
     {
-        List<Access> Accesses = new List<Access>();
+        static List<Access> Accesses = new List<Access>();
         private List<Employee> _employees;
         private List<Room> _rooms;
         Random random = new Random();
@@ -26,7 +26,7 @@ namespace RFID_gate_ui.Data
                 throw new System.ArgumentNullException();
             }
 
-            Accesses.Clear();
+            if (Accesses != null || Accesses.Count > 0) return Accesses;
 
             int nbEmployees = _employees.Count;
             int nbRooms = _rooms.Count;

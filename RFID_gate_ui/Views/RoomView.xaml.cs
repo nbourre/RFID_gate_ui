@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RFID_gate_ui.VM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace RFID_gate_ui.Views
         public RoomView()
         {
             InitializeComponent();
+
+            this.DataContext = new RoomViewModel();
         }
     }
 }
