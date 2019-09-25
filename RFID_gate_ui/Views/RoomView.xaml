@@ -48,6 +48,7 @@
                         <GridViewColumn Header="Employé" DisplayMemberBinding="{Binding CardId}"/>
                         <GridViewColumn Header="Début" DisplayMemberBinding="{Binding Begin}"/>
                         <GridViewColumn Header="Fin" DisplayMemberBinding="{Binding End}"/>
+                        
                     </GridView>
                 </ListView.View>
 

@@ -1,8 +1,6 @@
 ﻿using RFID_gate_models;
 using RFID_gate_ui.Helpers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace RFID_gate_ui.Data
 {

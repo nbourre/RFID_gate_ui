@@ -14,8 +14,8 @@
             <MenuItem Header="_Quitter" Click="Quit_click"/>
         </MenuItem>
         <MenuItem Header="_Navigation" >
-            <MenuItem Header="_Employés" />
-            <MenuItem Header="_Locaux"/>
+            <MenuItem Header="_Employés" Command="{Binding ShowEmployeesCommand}"/>
+            <MenuItem Header="_Locaux" Command="{Binding ShowRoomsCommand}"/>
         </MenuItem>
     </Menu>
 </UserControl>
