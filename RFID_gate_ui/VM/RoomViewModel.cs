@@ -9,7 +9,6 @@ namespace RFID_gate_ui.VM
         private IDataService<Room> roomDataService;
         public ObservableCollection<Room> Rooms { get; set; }
         private Room _selectedRoom;
-        private IDataService<Access> _selectedRoomAccess;
 
         public Room SelectedRoom
         {

@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data\AccessDataService.cs" />
+    <Compile Include="Data\DataLoader.cs" />
     <Compile Include="Data\EmployeeDataService.cs" />
     <Compile Include="Data\IDataService.cs" />
     <Compile Include="Data\RoomDataService.cs" />

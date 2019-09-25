@@ -50,13 +50,14 @@
             <Label Grid.Row="6" Content="Numéro de carte" Margin="10 0" />
             <TextBox Grid.Row="7" Text="{Binding SelectedEmployee.CardId, 
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10" />
-            <ListView Grid.Row="9"
-                      ItemsSource="{Binding ElementName=lvEmployees, Path=SelectedItem.CardId}">
+            
+            <ListView Grid.Row="8"
+                      ItemsSource="{Binding SelectedEmployee.Accesses}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Local" DisplayMemberBinding="{Binding Room}" Width="70"/>
-                        <GridViewColumn Header="Début" DisplayMemberBinding="{Binding Begin}" Width="70"/>
-                        <GridViewColumn Header="Fin" DisplayMemberBinding="{Binding End}" Width="70"/>
+                        <GridViewColumn Header="Local" DisplayMemberBinding="{Binding RoomNumber}"/>
+                        <GridViewColumn Header="Début" DisplayMemberBinding="{Binding Begin}"/>
+                        <GridViewColumn Header="Fin" DisplayMemberBinding="{Binding End}"/>
                     </GridView>
                 </ListView.View>
                 

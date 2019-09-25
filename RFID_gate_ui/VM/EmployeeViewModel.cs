@@ -1,6 +1,5 @@
 ﻿using RFID_gate_models;
 using RFID_gate_ui.Data;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace RFID_gate_ui.VM
@@ -11,9 +10,6 @@ namespace RFID_gate_ui.VM
         public ObservableCollection<Employee> Employees { get; set; }
         private Employee _selectedEmployee;
 
-        private ObservableCollection<Access> _selectedAccesses;
-        
-        private IDataService<Access> _accesses;
 
         public Employee SelectedEmployee
         {
@@ -25,7 +21,6 @@ namespace RFID_gate_ui.VM
             {
                 _selectedEmployee = value;
 
-
                 OnPropertyChanged();
             }
         }
@@ -33,10 +28,7 @@ namespace RFID_gate_ui.VM
         public EmployeeViewModel()
         {
             Employees = new ObservableCollection<Employee>();
-            this.employeeDataService = new EmployeeDataService();
-
-            _selectedAccesses = new ObservableCollection<Access>();
-            
+            this.employeeDataService = new EmployeeDataService();         
             
             Load();
         }
@@ -50,6 +42,8 @@ namespace RFID_gate_ui.VM
             {
                 Employees.Add(employee);
             }
+
+            
         }
 
 

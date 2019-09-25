@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RFID_gate_models
 {
@@ -18,5 +19,7 @@ namespace RFID_gate_models
                 return Number + " : " + Description;
             }
         }
+
+        public List<Access> Accesses { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using RFID_gate_ui.VM;
+﻿using RFID_gate_ui.Data;
+using RFID_gate_ui.VM;
 using System.Windows;
 
 namespace RFID_gate_ui
@@ -11,6 +12,8 @@ namespace RFID_gate_ui
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            DataLoader.Boot();
 
             MainWindow app = new MainWindow();
 

@@ -27,7 +27,7 @@ namespace RFID_gate_models
             }
         }
 
-        public List<Access> accesses { get; set; }
+        public List<Access> Accesses { get; set; }
         
     }
 }
