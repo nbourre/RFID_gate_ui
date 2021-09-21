@@ -1,4 +1,5 @@
-﻿using RFID_gate_ui.Views;
+﻿using RFID_gate_ui.Helpers;
+using RFID_gate_ui.Views;
 using System.Windows;
 using System.Windows.Input;
 
@@ -12,6 +13,7 @@ namespace RFID_gate_ui
         MainViewModel _mainViewModel;
         EmployeeView _employeeView;
         RoomView _roomView;
+
         
 
         public MainWindow()
@@ -20,7 +22,8 @@ namespace RFID_gate_ui
 
             _employeeView = new EmployeeView();
             _roomView = new RoomView();
-            
+
+
 
             _mainViewModel = new MainViewModel(_employeeView);
 
@@ -47,5 +50,9 @@ namespace RFID_gate_ui
         {
             _mainViewModel.ContentWindow = _roomView;
         }
+
+
+
+
     }
 }

@@ -17,8 +17,8 @@
                 <MenuItem Header="_Quitter" Click="Quit_click"/>
             </MenuItem>
             <MenuItem Header="_Navigation" >
-                <MenuItem Header="_Employés" Click="EmployeeMenuItem_Click"/>
-                <MenuItem Header="_Locaux" Click="RoomMenuItem_Click"/>
+                <MenuItem Header="_Employés" Command="{Binding ShowEntityWindow}" CommandParameter="EMPLOYEES"/>
+                <MenuItem Header="_Locaux" Command="{Binding ShowEntityWindow}" CommandParameter="ROOMS"/>
             </MenuItem>
         </Menu>
         <ContentControl DockPanel.Dock="Bottom" Content="{Binding ContentWindow}"/>
